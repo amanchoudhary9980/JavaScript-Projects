@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+    
+.buttons{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+#grey{
+    background-color: grey;
+}
+#yellow{
+    background-color: yellow;
+}
+#white{
+    background-color: white;
+}
+#blue{
+    background-color: blue;
+}

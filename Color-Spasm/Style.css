@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    position: relative;
+    top: 250px;
+    border: rgb(215, 233, 250) 2px solid;
+    width: 250px;
+    height: 250px;
+    padding: 50px;
+    border-radius: 12px;
+    background-color: rgba(246, 249, 252, 0.301);
+}
+.button{
+    width: 120px;
+    height: 30px;
+    border: none;
+    border-radius: 16px;
+    background-color: aquamarine;
+    font-size: 16px;
+    cursor: pointer;
+}
+.button:hover {
+    border: rgb(190, 207, 223) 2px solid;
+}
+#stop{
+    background-color: rgb(255, 136, 160);
+    color: white;
+}

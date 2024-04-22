@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color-Changer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Color Changer</h1>
+    <div class="buttons">
+        <span class="button" id="grey"></span>
+    <span class="button" id="blue"></span>
+    <span class="button" id="white"></span>
+    <span class="button" id="yellow"></span>
+    </div>
+</body>
+    <script>
+        const body = document.querySelector('body')
+        const button = document.querySelectorAll('.button')
+
+        button.forEach((button)=>button.addEventListener('click', function(button){
+            body.style.backgroundColor = button.target.id
+        }))
+    </script>
+</html>
