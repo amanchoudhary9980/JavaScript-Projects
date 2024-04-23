@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random User Info</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="user-card">
+        <div class="user-img"></div>
+        <div class="user-data">
+          <span id="name"> </span>
+          <div class="container">
+                <span class="label">Age:</span>
+              <span id="age" class="data"> </span>
+          </div>
+          <div class="container">
+            <span class="label">Location</span>
+              <span id="location" class="data"></span>
+          </div>
+          <div class="container">
+            <span class="label">Email</span>
+            <span id="email" class="data"></span>
+          </div>
+          <div class="container">
+            <span class="label">Phone</span>
+              <span id="cell" class="data"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const userimage = document.querySelector(".user-img");
+    const name = document.querySelector("#name");
+    const userLocation = document.querySelector("#location");
+    const email = document.querySelector("#email");
+    const cell = document.querySelector("#cell");
+    const age = document.querySelector("#age");
+
+    const url = "https://randomuser.me/api/";
+    const req = new XMLHttpRequest();
+    req.open("GET", url);
+    req.send();
+    req.onreadystatechange = function () {
+      let data;
+      if (req.readyState == 4) {
+        data = JSON.parse(this.response);
+        data = data.results[0];
+        console.log(data);
+      }
+      if (data) {
+        const url = data.picture.large;
+        userimage.innerHTML = `<img src=${url}></img>`;
+        email.innerHTML += data.email;
+        name.innerHTML +=
+          data.name.title + " " + data.name.first + " " + data.name.last;
+        age.innerHTML += data.dob.age;
+        cell.innerHTML += data.cell;
+        userLocation.innerHTML +=
+          data.location.city + ", " + data.location.country;
+      }
+    };
+  </script>
+</html>
